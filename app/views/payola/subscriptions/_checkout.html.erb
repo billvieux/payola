@@ -19,6 +19,7 @@
   shipping_address = local_assigns.fetch :shipping_address, false
   form_url = local_assigns.fetch :form_url, payola.subscribe_path(plan_class: plan_class, plan_id: plan_id)
   include_stripe_checkout_assets = local_assigns.fetch :include_stripe_checkout_assets, true
+  trial_end = local_assigns.fetch :trial_end, nil
 
   sale = Payola::Subscription.new(plan: plan)
 
@@ -52,6 +53,7 @@
     description: description,
     currency: currency,
     tax_percent: tax_percent,
+    trial_end: trial_end,
     plan_image_path: plan_image_path,
     publishable_key: Payola.publishable_key_for_sale(sale),
     panel_label: panel_label,
