@@ -42,6 +42,7 @@ var PayolaSubscriptionCheckout = {
         form.append($('<input type="hidden" name="quantity">').val(options.quantity));
         form.append($('<input type="hidden" name="coupon">').val(options.coupon));
         form.append($('<input type="hidden" name="tax_percent">').val(options.tax_percent));
+        form.append($('<input type="hidden" name="trial_end">').val(options.trial_end));
         if (options.signed_custom_fields) {
           form.append($('<input type="hidden" name="signed_custom_fields">').val(options.signed_custom_fields));
         }
