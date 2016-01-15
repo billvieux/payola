@@ -6,6 +6,7 @@
   disabled = !subscription.active?
   url = local_assigns.fetch :url, payola.cancel_subscription_path(subscription.guid)
   at_period_end = local_assigns.fetch :at_period_end, false
+  trial_end = local_assigns.fetch :trial_end, nil
 %>
 
 <%= form_tag url, :method => :delete do %>
